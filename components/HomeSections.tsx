@@ -65,7 +65,7 @@ const AnimatedStat = ({ end, label, suffix }: { end: number, label: string, suff
 
 export const TestimonialCard = ({ name, pet, text }: { name: string, pet: string, text: string }) => (
     <div style={{ background: 'white', padding: '2rem', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', textAlign: 'left' }}>
-        <p style={{ fontStyle: 'italic', marginBottom: '1.5rem', color: '#555' }}>"{text}"</p>
+        <p style={{ fontStyle: 'italic', marginBottom: '1.5rem', color: '#555' }}>&quot;{text}&quot;</p>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{ width: '40px', height: '40px', background: '#ccc', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: 'white' }}>
                 {name[0]}
