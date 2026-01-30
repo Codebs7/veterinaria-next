@@ -13,23 +13,43 @@ export default async function Home() {
   const logoUrl = settings.logoUrl || ''
 
   return (
-    <div className="home">
-      <section className="hero" style={{
+    <div className="home font-sans">
+      <section className="relative min-h-[600px] flex items-center justify-center text-center text-white px-4 py-20" style={{
         backgroundImage: 'url(/hero-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        position: 'relative'
       }}>
         {/* Overlay for readability */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 1 }}></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <div style={{ position: 'relative', zIndex: 2 }}>
-          {logoUrl && <img src={logoUrl} alt="Logo" style={{ maxWidth: '150px', marginBottom: '1rem', borderRadius: '10px', display: 'inline-block' }} />}
-          <h1>{heroTitle}</h1>
-          <p>{heroSubtitle}</p>
-          <div style={{ marginTop: '1.5rem' }}>
-            <Link href="/reservas" className="btn-primary" style={{ marginRight: '1rem', background: 'var(--primary)', border: 'none', color: 'white', fontWeight: 'bold' }}>Agendar Cita</Link>
-            <Link href="/servicios" className="btn-primary" style={{ background: 'transparent', border: '2px solid white' }}>Ver Servicios</Link>
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+          {logoUrl && (
+            <div className="mb-6">
+              <img src={logoUrl} alt="Logo" className="w-32 h-auto rounded-xl shadow-lg" />
+            </div>
+          )}
+
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-md">
+            {heroTitle}
+          </h1>
+
+          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl drop-shadow-sm">
+            {heroSubtitle}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <Link
+              href="/reservas"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg text-center"
+            >
+              Agendar Cita
+            </Link>
+            <Link
+              href="/servicios"
+              className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-full transition-all text-center"
+            >
+              Ver Servicios
+            </Link>
           </div>
         </div>
       </section>
