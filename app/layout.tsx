@@ -25,11 +25,11 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="footer">
-            <p>&copy; 2026 Creado por Codebs - Lima, Perú</p>
+            <p>&copy; 2026 Creado por Isibizi.online - Lima</p>
             <p>Urgencias: 992-107-290 | contacto@petshealth.pe</p>
           </footer>
-          <ChatWidget />
         </div>
+        <ChatWidget />
       </body>
     </html>
   )

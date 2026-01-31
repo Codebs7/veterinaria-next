@@ -3,10 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getSettings } from './actions/settings';
+import { PawPrint } from 'lucide-react';
 
 export default function Home() {
   const [settings, setSettings] = useState({
-    heroTitle: 'Cuidamos a quienes más amas 🐾',
+    heroTitle: 'Cuidamos a quienes más amas',
     heroSubtitle: 'Servicios veterinarios profesionales con amor y dedicación.',
     logoUrl: ''
   });
@@ -36,13 +37,16 @@ export default function Home() {
         {/* Overlay for readability */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 1 }}></div>
 
-        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}>
+        <div className="hero-content" style={{ position: 'relative', zIndex: 2, color: 'white', width: '100%' }}>
           {settings.logoUrl && <img src={settings.logoUrl} alt="Logo" style={{ maxWidth: '150px', marginBottom: '1rem', borderRadius: '10px', display: 'inline-block' }} />}
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>{settings.heroTitle}</h1>
-          <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>{settings.heroSubtitle}</p>
-          <div style={{ marginTop: '1.5rem' }}>
-            <Link href="/reservas" className="btn-primary" style={{ marginRight: '1rem', background: 'var(--primary)', border: 'none', color: 'white', fontWeight: 'bold', padding: '15px 30px', borderRadius: '30px', textDecoration: 'none', fontSize: '1.1rem' }}>Agendar Cita</Link>
-            <Link href="/servicios" className="btn-primary" style={{ background: 'transparent', border: '2px solid white', padding: '13px 30px', borderRadius: '30px', textDecoration: 'none', fontSize: '1.1rem' }}>Ver Servicios</Link>
+          <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+            {settings.heroTitle.replace('🐾', '')}
+            <PawPrint size={40} color="#FF7043" fill="#FF7043" />
+          </h1>
+          <p>{settings.heroSubtitle}</p>
+          <div className="hero-buttons">
+            <Link href="/reservas" className="btn-hero btn-hero-primary">Agendar Cita</Link>
+            <Link href="/servicios" className="btn-hero btn-hero-outline">Ver Servicios</Link>
           </div>
         </div>
       </section>

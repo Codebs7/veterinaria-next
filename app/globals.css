@@ -117,6 +117,13 @@ a {
   margin-bottom: 1rem;
 }
 
+.hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Services Grid */
 .services-grid {
   display: grid;
@@ -189,4 +196,163 @@ a {
   text-align: center;
   padding: 2rem;
   margin-top: auto;
+}
+
+/* Hero Buttons Container */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Navbar Enhancements */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  padding: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    /* More compact header */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 60px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    /* Slightly translucent */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 1rem 0;
+    /* Less padding */
+    gap: 0.5rem;
+    /* Closer links */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.75rem;
+    /* Clickable area */
+    border-bottom: 1px solid #f8f8f8;
+  }
+
+  /* Adjust Hero height/padding on mobile */
+  .hero {
+    min-height: 550px !important;
+    /* Enough height to cover image but not force scroll */
+    height: auto !important;
+    padding-top: 110px !important;
+    /* Ideal spacing from navbar to clear dog's face */
+    padding-bottom: 40px !important;
+    justify-content: flex-start !important;
+    /* Push to top */
+    align-items: center !important;
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    gap: 15px !important;
+    margin-top: 15px !important;
+  }
+
+  /* Mobile Button adjustments */
+  .btn-hero {
+    width: 80% !important;
+    max-width: 260px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    /* Force centering */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Mobile Hero Text */
+  .hero h1 {
+    font-size: 2.2rem !important;
+    /* Force override */
+    line-height: 1.1 !important;
+    /* Tighten line height "juntalo un poco mas" */
+    margin-bottom: 1rem !important;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 1rem;
+  }
+}
+
+/* Base Hero Button Styles (Desktop defaults) */
+.btn-hero {
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-hero:hover {
+  transform: translateY(-2px);
+}
+
+.btn-hero-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-hero-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  /* Default text color for outline */
+}
+
+/* Ensure hover text color implies it's clickable */
+.btn-hero-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
