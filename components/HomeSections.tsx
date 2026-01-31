@@ -4,8 +4,8 @@ import React, { useState, useEffect, useRef } from 'react'
 
 export const StatsSection = () => {
     return (
-        <section style={{ background: 'var(--primary-dark)', color: 'white', padding: '3rem 0', textAlign: 'center' }}>
-            <div className="services-grid" style={{ maxWidth: '1000px', margin: '0 auto', gap: '30px' }}>
+        <section className="bg-teal-800 text-white py-12 px-4 text-center">
+            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 <AnimatedStat end={6000} label="Mascotas Atendidas" suffix="+" />
                 <AnimatedStat end={15} label="Años de Experiencia" suffix="+" />
                 <AnimatedStat end={8500} label="Dueños Felices" suffix="+" />

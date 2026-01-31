@@ -10,29 +10,13 @@ const ChatWidget = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="whatsapp-float"
-            style={{
-                position: 'fixed',
-                bottom: '20px',
-                right: '20px',
-                backgroundColor: '#25D366',
-                color: 'white',
-                width: '60px',
-                height: '60px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-                zIndex: 1000,
-                transition: 'transform 0.3s',
-                textDecoration: 'none'
-            }}
+            className="fixed bottom-6 right-6 z-[9999] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+            aria-label="Chat on WhatsApp"
         >
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
                 alt="WhatsApp"
-                style={{ width: '35px', height: '35px' }}
+                className="w-8 h-8"
             />
         </a>
     )
