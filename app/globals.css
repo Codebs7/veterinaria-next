@@ -88,6 +88,8 @@ a {
 .main-content {
   flex: 1;
   padding: 0;
+  /* Removed padding per previous fix to allow full width, 
+     but kept structure from legacy app where possible */
   width: 100%;
 }
 
@@ -95,10 +97,19 @@ a {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
+  /* background image is handled inline in React/Next.js usually, 
+     but here is the base style */
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
-  border-radius: var(--radius);
-  margin-bottom: 2rem;
+  border-radius: 0;
+  /* Changed from var(--radius) to 0 for full width if needed */
+  margin-bottom: 0;
+  /* Changed from 2rem to 0 */
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero h1 {
@@ -111,6 +122,8 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .service-card {
@@ -162,37 +175,6 @@ a {
   border-color: transparent;
 }
 
-/* Payment Mock */
-.payment-mock {
-  border: 1px solid #eee;
-  padding: 1rem;
-  border-radius: var(--radius);
-  background: #fafafa;
-  margin-top: 1rem;
-}
-
-.payment-options {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.payment-btn {
-  flex: 1;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  background: white;
-}
-
-.payment-btn.active {
-  border-color: var(--primary);
-  background: var(--accent);
-  color: var(--primary-dark);
-  font-weight: bold;
-}
-
 /* Chat Widget */
 .chat-widget {
   position: fixed;
@@ -201,69 +183,6 @@ a {
   z-index: 1000;
 }
 
-.chat-toggle {
-  background: var(--secondary);
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  font-size: 1.5rem;
-}
-
-.chat-window {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  width: 300px;
-  height: 400px;
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border: 1px solid #ddd;
-}
-
-.chat-header {
-  background: var(--primary);
-  color: white;
-  padding: 1rem;
-  font-weight: bold;
-}
-
-.chat-messages {
-  flex: 1;
-  padding: 1rem;
-  overflow-y: auto;
-  background: #f9f9f9;
-}
-
-.chat-input {
-  display: flex;
-  border-top: 1px solid #eee;
-}
-
-.chat-input input {
-  flex: 1;
-  border: none;
-  padding: 1rem;
-}
-
-.chat-input button {
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 0 1rem;
-  cursor: pointer;
-}
-
-/* Footer */
 .footer {
   background: var(--text-dark);
   color: var(--text-light);

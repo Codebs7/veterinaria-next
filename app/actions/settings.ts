@@ -4,13 +4,18 @@ import prisma from '@/lib/prisma'
 import { revalidatePath } from 'next/cache'
 
 export async function getSettings() {
-    const settings = await prisma.setting.findMany()
-    // Convert array to object { key: value }
-    const settingsMap = settings.reduce((acc, curr) => {
-        acc[curr.key] = curr.value || ''
-        return acc
-    }, {} as Record<string, string>)
-    return settingsMap
+    try {
+        const settings = await prisma.setting.findMany()
+        // Convert array to object { key: value }
+        const settingsMap = settings.reduce((acc, curr) => {
+            acc[curr.key] = curr.value || ''
+            return acc
+        }, {} as Record<string, string>)
+        return settingsMap
+    } catch (error) {
+        console.error("Database connection error:", error)
+        return {} // Return empty settings if DB fails so the UI can still render with defaults
+    }
 }
 
 export async function updateSettings(updates: Record<string, string>) {
