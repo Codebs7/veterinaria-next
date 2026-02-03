@@ -57,7 +57,7 @@ export default function Home() {
         <div style={{ maxWidth: '500px' }}>
           <h2 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '2rem' }}>Más que una veterinaria, somos familia 🐾</h2>
           <p style={{ lineHeight: '1.6', color: '#555', marginBottom: '1rem' }}>
-            En PetsHealth, entendemos que tu mascota es un miembro más de la familia. Nuestro equipo de profesionales certificados se dedica a brindar la mejor atención médica con tecnología de punta y, sobre todo, mucho amor.
+            En Codebs, entendemos que tu mascota es un miembro más de la familia. Nuestro equipo de profesionales certificados se dedica a brindar la mejor atención médica con tecnología de punta y, sobre todo, mucho amor.
           </p>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}><span style={{ marginRight: '10px' }}>✅</span> Atención personalizada</li>

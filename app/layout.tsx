@@ -7,7 +7,7 @@ import ChatWidget from '@/components/ChatWidget'
 const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Veterinaria Pets Health',
+  title: 'Veterinaria Codebs',
   description: 'Cuidamos a quienes más amas',
 }
 
@@ -25,8 +25,8 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="footer">
-            <p>&copy; 2026 Creado por Isibizi.online - Lima</p>
-            <p>Urgencias: 992-107-290 | contacto@petshealth.pe</p>
+            <p>&copy; 2026 Creado por Codebs - Lima</p>
+            <p>Urgencias: 992-107-290 | contacto@codebs.pe</p>
           </footer>
         </div>
         <ChatWidget />

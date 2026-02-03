@@ -16,7 +16,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    PetsHealth <PawPrint color="var(--secondary)" size={28} />
+                    Codebs <PawPrint color="var(--secondary)" size={28} />
                 </div>
 
                 {/* Mobile Menu Button */}
